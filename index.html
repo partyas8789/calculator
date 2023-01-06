@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .maincontainer{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(3, 3, 83, 0.831);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .calculator{
+            width: 30%;
+            height: 85%;
+            background-color: rgb(208, 82, 103);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            
+        }
+        .row1{
+            width: 90%;
+            height: 15%;
+            /* border: 2px solid green; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .b{
+            width: 20%;
+            height: 90%;
+            /* border: 2px solid red; */
+            margin-right: 1rem;
+            background-color: #ffd168;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px;
+        }
+        .bb{
+            width: 100%;
+            height: 90%;
+            /* border: 2px solid rgb(10, 9, 9); */
+            background-color: #26547b;
+            display: flex;
+            align-items: center;
+            justify-content:end;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px;
+            
+        }
+        .bb h1{
+            color: white;
+            margin-right: 1rem;
+        }
+        .b h1{
+            color: #8e7f64;
+        }
+        .row2{
+            width: 90%;
+            height: 15%;
+            /* border: 2px solid yellow; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .red,.b1{
+            width: 22%;
+            height: 90%;
+            /* border: 2px solid green; */
+            margin-right: 1rem;
+            background-color: #26547b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px;
+            
+        }
+        .red{
+            background-color: red;
+        }
+        .b1 h1{
+            color: white;
+        }
+        .b2{
+            width: 22%;
+            height: 90%;
+            /* border: 2px solid green; */
+            margin-right: 1rem;
+            background-color: #ffd168;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px;
+        }
+        .b2 h1{
+            color: #8e7f64;
+        }
+        .b3{
+            width: 22%;
+            height: 90%;
+            /* border: 2px solid green; */
+            margin-right: 1rem;
+            background-color: #08dba0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px;
+        }
+        .b3 h1{
+            color: #6e8583;
+        }
+    </style>
+</head>
+<body>
+    <div class="maincontainer">
+        <div class="calculator">
+            <div class="row1">
+                <div  class="bb">
+                    <h1 id="output"></h1>
+                </div>
+            </div>
+            <div class="row2">
+                <div class="b">
+                    <h1 onclick="clearr()" >C</h1>
+                </div>
+                <div onclick="deletelast(event)" class="red">
+                    <h1 ) >DEL</h1>
+                </div>
+                <div onclick="getvalue(event)" class="b2">
+                    <h1 >(</h1>
+                </div>
+                <div onclick="getvalue(event)" class="b2">
+                    <h1 >)</h1>
+                </div>
+            </div>
+            <div class="row2">
+                <div onclick="getvalue(event)" class="b1">
+                    <h1 >7</h1>
+                </div>
+                <div onclick="getvalue(event)" class="b1">
+                    <h1 >8</h1>
+                </div>
+                <div onclick="getvalue(event)" class="b1">
+                    <h1 >9</h1>
+                </div>
+                <div onclick="getvalue(event)" class="b2">
+                    <h1 >*</h1>
+                </div>
+            </div>
+            <div class="row2">
+                <div onclick="getvalue(event)" class="b1">
+                    <h1 >4</h1>
+                </div>
+                <div onclick="getvalue(event)" class="b1">
+                    <h1 >5</h1>
+                </div>
+                <div onclick="getvalue(event)" class="b1">
+                    <h1 >6</h1>
+                </div>
+                <div onclick="getvalue(event)" class="b2">
+                    <h1 >/</h1>
+                </div>
+            </div>
+            <div class="row2">
+                <div onclick="getvalue(event)" class="b1">
+                    <h1 >1</h1>
+                </div>
+                <div onclick="getvalue(event)" class="b1">
+                    <h1 >2</h1>
+                </div>
+                <div onclick="getvalue(event)" class="b1">
+                    <h1 >3</h1>
+                </div>
+                <div onclick="getvalue(event)" class="b2">
+                    <h1 >+</h1>
+                </div>
+            </div>
+            <div class="row2">
+                <div onclick="getvalue(event)" class="b1">
+                    <h1 >.</h1>
+                </div>
+                <div onclick="getvalue(event)" class="b1">
+                    <h1 >0</h1>
+                </div>
+                <div onclick="calculate(event)" class="b3">
+                    <h1 >=</h1>
+                </div>
+                <div onclick="getvalue(event)"  class="b2">
+                    <h1 >-</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var allvalue
+        function getvalue(event) {
+            const value=event.target.innerText;
+            const output=document.getElementById("output")
+            output.innerText+=value
+            allvalue=output.innerText;
+            console.log(output.innerText);
+            console.log(allvalue);
+        }
+
+        function clearr() {
+           document.getElementById("output").innerText=""
+        }
+        function deletelast(params) {
+            console.log(allvalue);
+            allvalue=allvalue.slice(0,-1)
+            console.log(allvalue);
+            const opt=document.getElementById("output")
+            opt.innerText=allvalue
+        }
+        function calculate() {
+            const opt=document.getElementById("output")
+            opt.innerText=""
+            console.log(allvalue);
+            opt.innerText=eval(allvalue)
+        }
+    </script>
+</body>
+</html>
